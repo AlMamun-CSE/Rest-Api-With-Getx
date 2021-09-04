@@ -1,7 +1,10 @@
+import 'package:api_and_getx/controllers/train_live_status_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class TrainNoCard extends StatelessWidget {
   //const TrainNoCard({ Key? key }) : super(key: key);
+  final trainLiveStatusController = Get.put(TrainLiveStatusController());
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +21,12 @@ class TrainNoCard extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                "Train No: 12345",
-                style: TextStyle(fontSize: 24),
+                "Train No: ${trainLiveStatusController.trainLiveStatus.value.trainNo}",
+                style: TextStyle(fontSize: 22),
               ),
               Text(
-                "Date: 2020-09-07",
-                style: TextStyle(fontSize: 24),
+                "Date: ${trainLiveStatusController.trainLiveStatus.value.date}",
+                style: TextStyle(fontSize: 22),
               ),
             ],
           ),
