@@ -1,4 +1,4 @@
-import 'package:api_and_getx/Screens/HomeScreen/home_screen.dart';
+import 'package:api_and_getx/Screens/HomeScreen/home_live_status_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: HomeLiveStatusScreen(),
     );
   }
 }
