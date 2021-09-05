@@ -56,7 +56,7 @@ class LiveTrainInfoController extends GetxController {
           'https://indianrailapi.com/api/v2/livetrainstatus/apikey/4c31705dc6543a615f0c87d516d43530/trainnumber/$trainNo/date/$date/';
       //is orders there is subfolder of user id for a specific user
 
-      final response = await httpUsing.get(url);
+      final response = await httpUsing.get(Uri.parse(url));
 
       if (response == null) {
         //if we dont have any orders then simply return
@@ -116,7 +116,7 @@ class LiveTrainInfoController extends GetxController {
 
       // Updating Obs value of getx
       this.liveTrainInfo.update((val) {
-        val.trainNumber = liveTrainInfo.trainNumber;
+        val!.trainNumber = liveTrainInfo.trainNumber;
         val.currentStation = liveTrainInfo.currentStation;
         val.startDate = liveTrainInfo.startDate;
         val.trainRoute = liveTrainInfo.trainRoute;
